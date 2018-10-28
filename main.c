@@ -9,14 +9,27 @@
 // Filename main.c
 #include <stdio.h>
 
-int main()
+void foo(int *thisp, int that);
+
+int main(void)
 {
-    int i;
-    
-    for (i = 100; i <= 25; i+=5){
-            printf( "%d \n", i);
+
+        int first, second;
+        
+        first = 1;
+        second = 2;
+        foo(&second, first);
+        printf("%4d%4d\n", first, second);
+        return 0;
+}
+        
+        void foo(int *thisp, int that) {
+            int num = 5;
+            that = 2 + num;
+            *thisp = num * that;
         }
-    
+        
+        
     
     //do {
     //    printf( "%d ", i);
@@ -28,5 +41,5 @@ int main()
     //printf("2. %d\n", k);
   
     
-    return 0;
-}
+
+
